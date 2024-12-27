@@ -3,9 +3,9 @@ const express=require('express');
 const db=require('./db/db');
 const app=express();
 const port=process.env.PORT || 3000;
-const orderRoutes=require('./routes/orderRoutes');
-const materialRoutes=require('./routes/materialRoutes');
-const reportingRoutes=require('./routes/reportingRoutes');
+const orderRoutes=require('./Routes/orderRoutes');
+const materialRoutes=require('./Routes/materialRoutes');
+const reportingRoutes=require('./Routes/reportingRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
 
