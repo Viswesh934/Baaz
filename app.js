@@ -8,6 +8,17 @@ const materialRoutes=require('./routes/materialRoutes');
 const reportingRoutes=require('./routes/reportingRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
+const ratelimit= require('express-rate-limit');
+
+const limiter = ratelimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: 'You are sending too many requests mate',
+    headers: true,
+    legacy: true
+  });
+
+app.use(limiter);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
