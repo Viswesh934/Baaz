@@ -22,6 +22,7 @@ const postMaterials= async(req,res)=>{
         const data=new materials(req.body);
         await data.save();
         logger.info('Material added successfully');
+        res.status(200).send(data);
     }
     catch(error){
         logger.error('Error in adding material');
@@ -36,6 +37,7 @@ const updateMaterials= async(req,res)=>{
         const data=await materials.findByIdAndUpdate(req.params.id,req.body);
         await data.save();
         logger.info('Material updated successfully');
+        res.status(200).send(data);
     }
     catch(error){
         logger.error('Error in updating material');
@@ -51,6 +53,7 @@ const deleteMaterials= async(req,res)=>{
             res.status(404).send('Material not found');
         }
         logger.info('Material deleted successfully');
+        res.status(200).send(data);
     }
     catch(error){
         logger.error('Error in deleting material');

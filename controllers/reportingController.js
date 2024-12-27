@@ -30,18 +30,18 @@ const priceFluctuation= async(req,res)=>{
         const data=await materials.find();
         const report=data.map(material=>{
             const priceHistory=material.priceHistory;
-            const priceFluctuation=priceHistory[priceHistory.length-1].price-priceHistory[0].price;
+            
             return {
-                name:material.name,
-                priceFluctuation
+                priceHistory:priceHistory
             }
         });
         logger.info('Price fluctuation calculated successfully');
         res.status(200).send(report);
     }
     catch(error){
+        console.log(error);
         logger.error('Error in calculating price fluctuation');
-        res.status(500).send
+        res.status(500).send("Error in calculating price fluctuation")
     }
 }
 
