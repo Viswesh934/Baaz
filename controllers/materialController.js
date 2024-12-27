@@ -11,7 +11,7 @@ const getMaterials= async(req,res)=>{
     }
     catch(error){
         logger.error('Error in fetching materials');
-        res.status(500).send
+        res.status(500).send('Error in fetching materials');
     }
 }
 
@@ -26,7 +26,7 @@ const postMaterials= async(req,res)=>{
     }
     catch(error){
         logger.error('Error in adding material');
-        res.status(500).send
+        res.status(500).send('Error in adding material');
     }
 }
 
@@ -41,7 +41,7 @@ const updateMaterials= async(req,res)=>{
     }
     catch(error){
         logger.error('Error in updating material');
-        res.status(500).send
+        res.status(500).send("Error in updating material")
     }}
 
 //controller to delete materials
@@ -57,7 +57,7 @@ const deleteMaterials= async(req,res)=>{
     }
     catch(error){
         logger.error('Error in deleting material');
-        res.status(500).send
+        res.status(500).send('Error in deleting material');
     }
 }
 

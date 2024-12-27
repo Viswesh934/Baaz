@@ -19,7 +19,7 @@ const stockReport= async(req,res)=>{
     }
     catch(error){
         logger.error('Error in generating stock report');
-        res.status(500).send
+        res.status(500).send("Error in generating stock report")
     }
 }
 
@@ -39,7 +39,6 @@ const priceFluctuation= async(req,res)=>{
         res.status(200).send(report);
     }
     catch(error){
-        console.log(error);
         logger.error('Error in calculating price fluctuation');
         res.status(500).send("Error in calculating price fluctuation")
     }

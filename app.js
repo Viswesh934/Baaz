@@ -3,9 +3,9 @@ const express=require('express');
 const db=require('./db/db');
 const app=express();
 const port=process.env.PORT || 3000;
-const orderRoutes=require('./Routes/orderRoutes');
-const materialRoutes=require('./Routes/materialRoutes');
-const reportingRoutes=require('./Routes/reportingRoutes');
+const orderRoutes=require('./routes/orderRoutes');
+const materialRoutes=require('./routes/materialRoutes');
+const reportingRoutes=require('./routes/reportingRoutes');
 
 app.use(express.json());
 app.use('/order',orderRoutes);
